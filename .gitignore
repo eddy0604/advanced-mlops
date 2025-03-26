@@ -171,7 +171,7 @@ cython_debug/
 .pypirc
 
 # Jupyter Notebooks
-notebooks/
+# notebooks/
 
 # For macOS
 .DS_Store

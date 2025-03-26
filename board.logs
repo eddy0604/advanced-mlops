@@ -34,3 +34,53 @@ https://news.hada.io/
 vibe coding
 
 
+docker-compose 로 일부 컨테이너만도 up 이 가능한지
+
+grok 이 괜찮은데 아직 회사 차원에서 막히지 않아서 좋은 거 같음
+
+접속
+root/root mlops
+
+sqlalchemy
+pyodbc
+
+드라이버 없어도 dialect 개발해서 사용 가능하다??
+
+엔진 형성시에 @ 들어가는 경우
+urllib3 parse url 로 처리해주어야 password 정상적으로 처리 가능함
+
+create_async_engine
+
+with 절 사용해서 connection 관리를 하지 않아도 되는 만능 패턴임
+
+webserver
+trigger
+scheduler
+
+LocalExecutor 는 sqlite 로 사용할 수 없어서 mariadb 로 해야함
+
+standalone | Login with username: admin  password: 9XbHKVBTzHPgrA4V
+
+lgcns / 1q2w3e4r
+
+
+realpath 가 있더라도 realpath 같은 곳에 종속성이 있으면
+심볼릭 링크 만들때 종속성이 있는 path 도 심볼릭 링크 만들어줘야 해
+
+ctrl , : setting 불러오기
+
+ctrl shift k : 줄삭제
+
+jinja template : python 안에서 time string 도와주는 템플릿??
+
+alt shift 아래방향 : 줄복사
+
+ctrl / : 선택부분 주석
+
+xcom 다음 수업시간에 할 것
+
+아스트릭스 import 오래 걸린다??
+
+리팩토링 공수 줄이려면 pre commit 으로 쓰면 가독성이나 유지보수 용이성의 장점이 있음
+
+ 
