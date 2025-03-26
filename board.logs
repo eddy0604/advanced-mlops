@@ -36,7 +36,7 @@ vibe coding
 
 docker-compose 로 일부 컨테이너만도 up 이 가능한지
 
-grok 이 괜찮은데 아직 회사 차원에서 막히지 않아서 좋은 거 같음
+"grok"이 괜찮은데 아직 회사 차원에서 막히지 않아서 좋은 거 같음
 
 접속
 root/root mlops
@@ -83,4 +83,13 @@ xcom 다음 수업시간에 할 것
 
 리팩토링 공수 줄이려면 pre commit 으로 쓰면 가독성이나 유지보수 용이성의 장점이 있음
 
- 
+Q. SQLExecuteQueryOperator 에서 split_statements 를 False 로 하면?? 
+
+RobustScaler
+-> artifact
+
+dotenv??
+secret 관리
+
+스케일러는 학습 데이터에 대해서만 할 것
+data leakage 방지
