@@ -1,0 +1,36 @@
+
+
+템플릿
+https://github.com/otzslayer/advanced-mlops
+정답지
+https://github.com/otzslayer/lgcns-advanced-mlops
+
+github code space 리눅스 환경 사용 가능함
+-> 4core / 16gb ram / 32gb disk 를 무료로 30시간 제공함
+(Q: 30시간 지나면 사라지는지?? )
+(Q: repository 별로 계산되는지??)
+(Q: 회사에서 접속이 가능한지??)
+
+
+vllm 으로 서빙을 함
+( openllm : bentoml 만든 회사에서 오픈한 것도 있음 )
+
+sudo rm /etc/localtime
+sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+
+cron 이 KST UST 에 영향을 받는다
+가급적이면 KST 로 설정하는게 보기 편할 것임
+
+uv 가 엄청 빠르다(rust 로 제공한다) - 원 캐쉬
+모델 컨텍스트 프로토콜
+(Q: 로컬에 사용하면 부하가 많이 걸리지 않는지??)
+--native-tls (== trusted-host 와 같다고 보면 됨)
+
+**pythonpath 밑에는 자동으로 패키지화해서 불러올 수 있음
+
+
+https://news.hada.io/
+
+vibe coding
+
+
