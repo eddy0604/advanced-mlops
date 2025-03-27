@@ -37,7 +37,7 @@ with DAG(
     catchup=False,
     tags=["lgcns", "mlops"],
 ) as dag:
-    # TODO: 코드 작성
+    # DONE: 코드 작성
     # 아래 Task를 적절한 Operator를 사용하여 구현
     
     # data_extract = EmptyOperator(task_id="data_extraction")
@@ -49,8 +49,44 @@ with DAG(
         autocommit=False
     )
 
-    data_preprocessing = EmptyOperator(task_id="data_preprocessing")
+    # data_preprocessing = EmptyOperator(task_id="data_preprocessing")
+    # data_preprocessing = BashOperator(
+    #     task_id="data_preprocessing",
+    #     bash_command=f"cd {airflow_dags_path}/pipelines/continuous_training/docker &&"
+    #     "docker compose up --build && docker compose down",
+    #     env={
+    #         "PYTHON_FILE": "/home/codespace/data_preprocessing/preprocessor.py",
+    #         "MODEL_NAME":"credit_score_classification",
+    #         "BASE_DT": "{{ ds }}"
+    #     },
+    #     append_env=True,
+    #     retries=1,
+    # )
+    data_preprocessing = BashOperator(
+        task_id="data_preprocessing",
+        bash_command=f"cd {airflow_dags_path}/pipelines/continuous_training/docker &&"
+        "docker compose up --build && docker compose down",
+        env={
+            "PYTHON_FILE": "/home/codespace/data_preprocessing/preprocessor.py",
+            "MODEL_NAME": "credit_score_classification",
+            "BASE_DT": "{{ ds }}",
+        },
+        append_env=True,
+        retries=1,
+    )
 
-    training = EmptyOperator(task_id="model_training")
+    # training = EmptyOperator(task_id="model_training")
+    training = BashOperator(
+        task_id="model_training",
+        bash_command=f"cd {airflow_dags_path}/pipelines/continuous_training/docker &&"
+        "docker compose up --build && docker compose down",
+        env={
+            "PYTHON_FILE": "/home/codespace/training/trainer.py",
+            "MODEL_NAME": "credit_score_classification",
+            "BASE_DT": "{{ ds }}",
+        },
+        append_env=True,
+        retries=1,
+    )
 
     data_extract >> data_preprocessing >> training
